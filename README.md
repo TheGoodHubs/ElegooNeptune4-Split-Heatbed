@@ -4,7 +4,7 @@ This tutorial is meant for OrcaSlicer but will work with any slicer providing th
 The split heatbed of the Elegoo Neptune 4 (Pro) does not work with OrcaSlicer default configuration - or better to say the klipper configuration for it is already incomplete.
 The root cause is that the M140 and M190 Gcodes will always heat up both heating elements at once. 
 
-**Please consider before applying:** These changed will enable the split heatbed but will have further effects.
+**Please consider before applying:** These changes will enable the split heatbed but will have further effects.
 According to tests I performed a full heatbed heat up from 23C ambient to 60C will take about 2min 22sec, then continue to use on the inner heater about 10%/10W  and the outer about 33%/50W to keep this temperature stable (so 60W overall for keeping the temperature). 
 Using only the inner heating element will take about 4min 48seconds to get from 23C ambient to 60C. This is significantly longer. The reason being that you will still heat up the same thermal mass/printbed - it is not split internally. The outer temperature bed probe will still monitor 45C created by the inner heating element only. To keep this temperature stable the inner element will further be used about 40%/40W.
 During heat up the heating elements are used 100%, therefore drawing 100W on the inner heater and 150W on the outer. So the inner bed only will use 8Wh and the full bed 9,86Wh to heat up from 23C to 60C.
